@@ -1,7 +1,7 @@
 {
   "name": "phpstorm-mcp",
-  "version": "1.0.1",
-  "description": "Agent skill for using PhpStorm MCP tools in PHP projects.",
+  "version": "1.0.2",
+  "description": "Agent skill for using PhpStorm MCP tools in PhpStorm projects.",
   "author": {
     "name": "TechSpokes",
     "url": "https://www.techspokes.com"
@@ -13,13 +13,14 @@
     "codex-plugin",
     "phpstorm",
     "mcp",
-    "php"
+    "php",
+    "jetbrains"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "PhpStorm MCP",
-    "shortDescription": "Route PHP project work between PhpStorm MCP and terminal tools.",
-    "longDescription": "Helps agents use PhpStorm MCP for IDE-owned PHP project context, inspections, quick fixes, refactoring, execution, Composer runtime checks, database probes, and safe IDE action discovery.",
+    "shortDescription": "Route PhpStorm project work between PhpStorm MCP and terminal tools.",
+    "longDescription": "Helps agents use PhpStorm MCP for IDE-owned project context, inspections, quick fixes, refactoring, execution, Composer and PHP checks when relevant, database probes, and safe IDE action discovery.",
     "developerName": "TechSpokes",
     "category": "Developer Tools",
     "capabilities": [
@@ -29,7 +30,7 @@
     ],
     "websiteURL": "https://github.com/TechSpokes/skill-ide-phpstorm-mcp",
     "defaultPrompt": [
-      "Use the PhpStorm MCP skill to work in this PHP project. Refresh the active PhpStorm project configuration, route semantic IDE work through MCP, use terminal tools where they are more deterministic, and validate any changes."
+      "Use the PhpStorm MCP skill to work in this PhpStorm project. Refresh active project context, route semantic IDE work through MCP, use terminal tools where they are more deterministic, and validate any changes."
     ],
     "brandColor": "#7C3AED"
   }

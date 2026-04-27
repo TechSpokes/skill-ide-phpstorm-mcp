@@ -4,6 +4,12 @@
 
 No unreleased changes.
 
+## [v1.0.2]
+
+- Update Codex and Claude plugin manifests to describe PhpStorm projects instead of PHP-only projects.
+- Add JetBrains plugin metadata keyword for marketplace discovery.
+- Prepare v1.0.2 release package metadata.
+
 ## [v1.0.1]
 
 - Rework the README around concrete PHP developer workflow problems.
