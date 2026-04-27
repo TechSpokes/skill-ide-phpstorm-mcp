@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Map PhpStorm MCP tools",
+    "priority": "high",
+    "done": false
+  },
+  {
+    "id": 2,
+    "title": "Compare indexed search with rg",
+    "priority": "medium",
+    "done": false
+  },
+  {
+    "id": 3,
+    "title": "Draft intake report",
+    "priority": "high",
+    "done": true
+  }
+]

@@ -1,0 +1,16 @@
+goal: Exercise PhpStorm MCP behavior on a larger synthetic PHP project inside .intake.
+status: completed
+fixture:
+  path: .intake/large-app
+  purpose: Create enough files, duplicate symbols, inheritance, interfaces, traits, and intentional warnings to test IDE advantages at project scale.
+test_groups:
+  - completed: indexed search over many files
+  - completed: ambiguous symbol rename safety
+  - completed: inspection detail and quick fixes
+  - completed: formatting and cleanup action discovery
+  - completed: run configuration and run point discovery
+  - completed: terminal comparison with rg and php lint
+constraints:
+  - Keep all generated material under .intake.
+  - Do not edit src, docs, packaging, .github, or .template.
+  - Avoid destructive cleanup actions outside the fixture.

@@ -1,0 +1,17 @@
+{
+  "name": "intake/composer-fixture",
+  "description": "Disposable Composer fixture for PhpStorm MCP research.",
+  "type": "project",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "ComposerFixture\\": "src/"
+    }
+  },
+  "scripts": {
+    "smoke": "php tests/smoke.php"
+  },
+  "require": {
+    "php": ">=8.2"
+  }
+}

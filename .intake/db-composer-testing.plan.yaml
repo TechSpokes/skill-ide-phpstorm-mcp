@@ -1,0 +1,27 @@
+goal: Extend PhpStorm MCP research with Composer and database-oriented playground tests.
+status: completed
+composer:
+  fixture: .intake/composer-fixture
+  allowed_by_user: true
+  first_tests:
+    - completed: composer version
+    - completed: composer validate
+    - completed: composer dump-autoload on a dependency-free fixture
+    - completed: Composer script runtime mismatch check
+    - completed: PhpStorm action discovery for Composer workflows
+database:
+  fixture: .intake/db-playground
+  connection:
+    dsn: jdbc:mariadb://localhost:3307/phpstormtest
+    database: phpstormtest
+    user: phpstormtest
+    password_source: environment variable with local test default
+  first_tests:
+    - completed: PHP PDO driver availability
+    - completed: read-only connection probe
+    - completed: database/version/current-user metadata
+    - completed: table inventory
+  safety:
+    - Start read-only.
+    - Do not create, alter, truncate, drop, import, or export data without explicit user approval.
+    - Do not touch non-test databases.

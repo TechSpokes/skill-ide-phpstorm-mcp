@@ -1,0 +1,18 @@
+goal: Build a compact PHP sample app that exposes enough code structure for MCP capability testing.
+status: completed
+app:
+  name: Focus Ledger
+  purpose: Track small work tasks from CLI and a simple web page.
+  php_target: PHP 5.6-compatible syntax because PhpStorm reports project language level 5.6.
+features:
+  - JSON-backed task repository
+  - Service layer for open and completed task summaries
+  - CLI entry point for listing and adding tasks
+  - Web entry point for task overview
+  - Minimal test runner without external dependencies
+testing_targets:
+  - completed: Inspect PHP files in PhpStorm
+  - completed: Search classes, methods, strings, and routes
+  - completed: Rename a service method through symbol-aware refactoring
+  - completed: Format selected files through PhpStorm
+  - completed: Execute app tests through terminal and IDE terminal paths
