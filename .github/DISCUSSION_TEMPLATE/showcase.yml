@@ -1,29 +1,24 @@
-title: "Show And Tell"
+title: "Usage Reports"
 labels: ["showcase", "community"]
 body:
   - type: markdown
     attributes:
       value: |
-        Share a skill repository or workflow created from Skill Base Template.
-  - type: input
-    id: repository
-    attributes:
-      label: Repository Or Project
-      description: Link to the generated repository or describe the project.
+        Share non-private usage results from the phpstorm-mcp skill.
   - type: textarea
-    id: skill
+    id: project-context
     attributes:
-      label: Skill Description
-      description: What does the generated skill help agents do?
-    validations:
-      required: true
+      label: Project Context
+      description: Describe the public or sanitized project context.
   - type: textarea
     id: workflow
     attributes:
-      label: Workflow Notes
-      description: What worked well or what needed adaptation?
+      label: Workflow
+      description: What did the skill help the agent do?
+    validations:
+      required: true
   - type: textarea
     id: lessons
     attributes:
       label: Lessons Learned
-      description: What would help others using this template?
+      description: What should maintainers improve?

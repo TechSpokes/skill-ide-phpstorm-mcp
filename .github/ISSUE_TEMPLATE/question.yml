@@ -1,5 +1,5 @@
 name: Question
-description: Ask a question about using or adapting the template
+description: Ask a question about using or maintaining the phpstorm-mcp skill
 labels: [question]
 body:
   - type: textarea
@@ -14,15 +14,15 @@ body:
     attributes:
       label: Topic
       options:
-        - Creating a repository from the template
-        - Preparing intake material
-        - Running the bootstrap agent workflow
-        - Generated AGENTS.md or README.md
-        - Validation or packaging
-        - Publishing release assets
+        - Installing the skill
+        - Using PhpStorm MCP
+        - Tool routing
+        - Safety boundaries
+        - Capability sweeps
+        - Packaging
         - Other
   - type: textarea
     id: context
     attributes:
       label: Context
-      description: Include links, commands, or non-private examples that help explain the question.
+      description: Include non-private examples, versions, and commands that help explain the question.

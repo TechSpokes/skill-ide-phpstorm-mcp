@@ -1,14 +1,18 @@
 {
-  "name": "placeholder-skill",
-  "version": "0.1.0",
-  "description": "Placeholder plugin manifest for a generated agent skill.",
+  "name": "phpstorm-mcp",
+  "version": "1.0.0",
+  "description": "Agent skill for using PhpStorm MCP tools in PHP projects.",
   "author": {
-    "name": "Template Author"
+    "name": "TechSpokes",
+    "url": "https://www.techspokes.com"
   },
-  "homepage": "https://github.com/OWNER/REPOSITORY",
-  "repository": "https://github.com/OWNER/REPOSITORY",
+  "homepage": "https://github.com/TechSpokes/skill-ide-phpstorm-mcp",
+  "repository": "https://github.com/TechSpokes/skill-ide-phpstorm-mcp",
   "keywords": [
     "agent-skill",
-    "claude-plugin"
+    "claude-plugin",
+    "phpstorm",
+    "mcp",
+    "php"
   ]
 }

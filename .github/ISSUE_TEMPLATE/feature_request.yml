@@ -1,5 +1,5 @@
 name: Feature request
-description: Suggest an improvement to the template or generated repository workflow
+description: Suggest an improvement to the phpstorm-mcp skill
 labels: [enhancement]
 body:
   - type: textarea
@@ -10,10 +10,15 @@ body:
     validations:
       required: true
   - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Describe any PhpStorm MCP behavior, fixture test, or project observation behind the request.
+  - type: textarea
     id: proposal
     attributes:
       label: Proposed solution
-      description: Describe the change and where it would belong.
+      description: Describe the change and where it belongs.
     validations:
       required: true
   - type: dropdown
@@ -21,23 +26,9 @@ body:
     attributes:
       label: Area
       options:
-        - Bootstrap workflow
-        - Agent instructions
-        - SKILL.md scaffold
-        - Validation
+        - SKILL.md
+        - References
+        - Maintenance sweep
         - Packaging
-        - Release workflow
         - Documentation
-        - Community maintenance
         - Other
-    validations:
-      required: true
-  - type: textarea
-    id: generated-impact
-    attributes:
-      label: Impact on generated repositories
-      description: How would this change affect repositories created from the template?
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives considered

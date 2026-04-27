@@ -1,42 +1,30 @@
 # Contributing
 
-Thank you for improving Skill Base Template.
-
 ## Purpose
 
-This project helps teams create structured, validated, releasable agent skill repositories from raw intake material. Contributions should preserve that purpose.
+This repository is maintained by TechSpokes for the `phpstorm-mcp` skill. Contributions should improve how agents use PhpStorm MCP safely and effectively in PHP projects.
 
 ## Good Contributions
 
-- Improve bootstrap instructions for agents.
-- Improve generated repository maintenance guidance.
-- Improve validation or release packaging.
-- Improve documentation clarity for new GitHub users.
-- Add checks that prevent raw intake or bootstrap files from leaking into release assets.
-- Clarify rationale behind instructions when it improves downstream agent judgment.
+- Clarify PhpStorm MCP tool routing.
+- Add evidence-backed capability classifications.
+- Improve safety guidance for IDE actions, Composer, databases, and execution.
+- Update references after a documented capability sweep.
+- Improve validation or release packaging without changing runtime behavior.
 
 ## Before Opening A Pull Request
 
-- Read `README.md`.
-- Read `docs/ARCHITECTURE.md`.
+- Read `AGENTS.md`.
+- Read `src/SKILL.md`.
 - Run `npm run validate`.
 - Run `npm run package -- v0.1.0` when changing packaging or release behavior.
 
-## Documentation Standards
+## Evidence Standard
 
-Use plain Markdown with real headings, short paragraphs, flat lists, and fenced code blocks with language identifiers.
+Do not promote a new MCP tool or IDE action based only on discovery. Test it in a disposable fixture or approved real project scope, then document the observed behavior.
 
-Prefer explaining why a rule exists when future agents may need to adapt it. Avoid adding long theory directly to the README. Put operational depth in `docs/` or `.template/bootstrap/`.
+## Sensitive Material
 
-## Pull Request Expectations
+Do not commit secrets, private code, local database credentials, proprietary research, or machine-specific paths as skill guidance.
 
-Each pull request should explain:
-
-- What changed.
-- Why it matters.
-- How it was validated.
-- Whether generated repositories are affected.
-
-## Security And Privacy
-
-Do not commit private intake material, credentials, tokens, or proprietary examples. Use minimal public examples when demonstrating a workflow.
+Use `.intake/` only for sanitized material that maintainers should review before turning it into skill guidance.

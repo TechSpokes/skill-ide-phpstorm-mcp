@@ -1,18 +1,15 @@
 name: Bug report
-description: Report a problem with the template, validation, packaging, or workflows
+description: Report a problem with the phpstorm-mcp skill, validation, packaging, or workflows
 labels: [bug]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for reporting a problem. Please include enough detail to reproduce the issue without private intake material.
   - type: dropdown
     id: area
     attributes:
       label: Area
       options:
-        - Bootstrap instructions
-        - Generated skill scaffold
+        - Runtime skill guidance
+        - Reference guidance
+        - PhpStorm MCP capability classification
         - Validation script
         - Release packaging
         - GitHub Actions workflow
@@ -39,23 +36,18 @@ body:
     attributes:
       label: Steps to reproduce
       value: |
-        1. 
-        2. 
-        3. 
+        1.
+        2.
+        3.
     validations:
       required: true
-  - type: textarea
-    id: output
-    attributes:
-      label: Logs or output
-      description: Paste relevant command output. Remove secrets and private intake.
-      render: text
   - type: textarea
     id: environment
     attributes:
       label: Environment
       value: |
         - Operating system:
-        - Node.js version:
-        - npm version:
-        - Repository state: template mode or generated skill repository
+        - PhpStorm version:
+        - PhpStorm MCP version:
+        - PHP runtime:
+        - Composer runtime:

@@ -1,44 +1,40 @@
 # Releasing
 
-This template contains release automation for generated skill repositories, but the release workflow is not active in the template repository itself.
+## Release Source
 
-Generated skill release workflows live under `.template/generated/.github/workflows/` until the bootstrap agent installs them during cleanup.
+Use Git tags in `vX.Y.Z` format as the release source of truth.
 
-## Release Goal
+## Required Files
 
-Release assets should contain only what an agent host needs to install and use the generated skill.
+Before tagging `vX.Y.Z`, ensure:
 
-The release process protects three things:
+- `CHANGELOG.md` contains `## [vX.Y.Z]`.
+- `docs/releases/vX.Y.Z.md` exists.
+- `packaging/codex-plugin/.codex-plugin/plugin.json` uses version `X.Y.Z`.
+- `packaging/claude-plugin/.claude-plugin/plugin.json` uses version `X.Y.Z`.
 
-- User privacy by excluding raw intake.
-- Skill portability by packaging the runtime skill cleanly.
-- Maintainer confidence by requiring changelog and release notes.
-
-## Release Checklist
-
-- Update `src/SKILL.md`.
-- Update supporting files in `src/references/`.
-- Update `README.md` and docs.
-- Update `CHANGELOG.md`.
-- Add `docs/releases/vX.Y.Z.md`.
-- Update packaging manifests.
-- Run `npm run validate`.
-- Tag the release with `vX.Y.Z`.
-
-Each checklist item exists to keep repository state, package metadata, and release history synchronized. Skipping one makes it harder for future agents to understand what changed and whether an artifact is safe to publish.
-
-## Local Packaging
+## Validation
 
 Run:
 
 ```bash
-npm run package -- v0.1.0
+npm run validate
 ```
 
-Use the intended tag. Assets are written to `dist/assets/`.
+Run a packaging smoke test:
 
-## GitHub Release
+```bash
+npm run package -- vX.Y.Z
+```
 
-After bootstrap cleanup, pushing a `vX.Y.Z` tag in a generated skill repository runs `.github/workflows/release-draft.yml`. The workflow creates or updates a draft release and uploads ZIP assets.
+Expected assets:
 
-The template repository keeps only `.github/workflows/template-ci.yml` active. This prevents template tags from publishing placeholder skill assets.
+- `dist/assets/phpstorm-mcp-vX.Y.Z.zip`
+- `dist/assets/phpstorm-mcp-codex-plugin-vX.Y.Z.zip`
+- `dist/assets/phpstorm-mcp-claude-plugin-vX.Y.Z.zip`
+
+## Release Boundaries
+
+Release assets must not include `.intake`, private research folders, `.template`, `.git`, `.idea`, `.github`, `docs`, `tmp`, `dist`, `node_modules`, or local environment files.
+
+The packaged skill may include only runtime skill files from `src/` and plugin manifests from `packaging/`.

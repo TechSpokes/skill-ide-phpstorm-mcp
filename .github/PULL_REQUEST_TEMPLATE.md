@@ -1,24 +1,22 @@
 ## Summary
 
-Describe the change and why it matters.
+Describe the change and why it matters for the `phpstorm-mcp` skill.
 
 ## Scope
 
-Which area changed?
-
-- [ ] Public README or docs
-- [ ] Bootstrap instructions
-- [ ] Skill scaffold
-- [ ] Validation scripts
+- [ ] Runtime skill guidance
+- [ ] Reference material
+- [ ] Maintenance sweep or fixtures
+- [ ] Documentation
 - [ ] Packaging or release workflow
-- [ ] GitHub community or maintenance files
+- [ ] GitHub community files
 
 ## Validation
 
 - [ ] Ran `npm run validate`
-- [ ] Ran `npm run package -- v0.1.0` if packaging or release behavior changed
-- [ ] Checked that generated repositories still transition cleanly from bootstrap mode to maintenance mode
-- [ ] Checked that no private intake or local machine paths were added
+- [ ] Ran `npm run package -- v1.0.0` if packaging changed
+- [ ] Checked that release artifacts exclude private research, bootstrap, and local files
+- [ ] Documented evidence for new or changed MCP capability guidance
 
 ## Notes
 

@@ -1,13 +1,5 @@
 # Release Notes
 
-Add one Markdown file per release tag.
+Each release must have a file named after its tag, such as `v1.0.0.md`.
 
-## File Naming
-
-Use this format:
-
-```text
-vX.Y.Z.md
-```
-
-The draft release workflow requires the release notes file for the tag being packaged.
+Release notes should describe user-visible skill changes, package changes, validation performed, and known limitations.

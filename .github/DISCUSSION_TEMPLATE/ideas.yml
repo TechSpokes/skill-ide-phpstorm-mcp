@@ -4,7 +4,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Share ideas for improving Skill Base Template or the generated repository lifecycle.
+        Share ideas for improving the phpstorm-mcp skill.
   - type: textarea
     id: idea
     attributes:
@@ -13,29 +13,19 @@ body:
     validations:
       required: true
   - type: textarea
-    id: use-case
+    id: evidence
     attributes:
-      label: Use Case
-      description: What problem does this solve?
-    validations:
-      required: true
+      label: Evidence
+      description: Describe any tested PhpStorm MCP behavior behind the idea.
   - type: dropdown
     id: area
     attributes:
       label: Area
       options:
-        - Intake workflow
-        - Bootstrap instructions
-        - Generated skill structure
-        - Validation
-        - Release packaging
-        - Maintenance docs
+        - Runtime skill
+        - References
+        - Capability sweep
+        - Safety guidance
+        - Packaging
+        - Documentation
         - Other
-  - type: checkboxes
-    id: contribution
-    attributes:
-      label: Contribution
-      options:
-        - label: I can help test this idea.
-        - label: I can provide an example generated skill repository.
-        - label: I can help with documentation.

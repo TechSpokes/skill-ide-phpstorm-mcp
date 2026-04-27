@@ -1,19 +1,17 @@
 # Support
 
-Use the support path that matches your need.
-
 ## Questions
 
-Use GitHub Discussions for questions about using the template, adapting bootstrap instructions, or designing generated skill repositories.
+Use GitHub Discussions for questions about installing, maintaining, or adapting the `phpstorm-mcp` skill.
 
 ## Bugs
 
-Use GitHub Issues when validation, packaging, workflow files, or documented instructions do not behave as described.
+Use GitHub Issues when the skill guidance, validation, packaging, or release workflow does not behave as documented.
 
-## Commercial Support
+## Maintainer
 
-For professional support, consulting, or custom agent-skill repository design, contact TechSpokes at [www.techspokes.com](https://www.techspokes.com).
+The author and maintainer is TechSpokes: [www.techspokes.com](https://www.techspokes.com).
 
-## Ideas Behind The Template
+## Security
 
-If you want to discuss the communication-design ideas behind the template, reach out to Serge Liatko, CEO of TechSpokes, on LinkedIn: [linkedin.com/in/sergeliatko](https://www.linkedin.com/in/sergeliatko/).
+Do not report credential leaks, private research exposure, or release artifact contamination in public issues. Follow `SECURITY.md`.

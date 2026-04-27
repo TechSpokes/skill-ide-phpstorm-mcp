@@ -1,8 +1,6 @@
 # Version
 
-The template starts public release at version `1.0.0`.
-
-Generated skill repositories should reset or continue versioning according to the generated skill's release policy.
+The `phpstorm-mcp` skill starts public release at version `1.0.0`.
 
 ## Tag Format
 
@@ -12,8 +10,10 @@ Use tags in this format:
 vX.Y.Z
 ```
 
-Example:
+## Version Rules
 
-```text
-v1.0.0
-```
+Increment patch versions for documentation corrections and small reference clarifications.
+
+Increment minor versions when adding new supported workflows, references, or capability classifications.
+
+Increment major versions when changing activation scope, safety boundaries, or package layout in a way that affects existing users.

@@ -1,9 +1,7 @@
-# GitHub Copilot Instructions
+# Copilot Instructions
 
-Follow the repository `AGENTS.md` first.
+Follow the repository maintenance rules in `AGENTS.md`.
 
-This repository is a template for generating standalone agent skill repositories. Keep bootstrap instructions, user intake, generated skill content, and release artifacts separate.
+Use `src/SKILL.md` as the canonical runtime skill entry point. Keep detailed PhpStorm MCP behavior in focused files under `src/references/`.
 
-For Markdown files, also follow `.github/instructions/markdown.instructions.md`.
-
-Run `npm run validate` after changing scaffold, docs, validation, or packaging files.
+Run `npm run validate` after changes. Run `npm run package -- v1.0.0` when changing packaging or release behavior.

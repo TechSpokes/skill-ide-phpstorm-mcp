@@ -1,97 +1,80 @@
-# Agent Instructions for skill-base-template - Skill Repository Bootstrap
+# Agent Instructions for phpstorm-mcp
 
 ## Summary
 
-This repository is in bootstrap mode. Build a standalone agent skill repository from user material placed in `.intake/`, then convert the repository to maintenance mode by rewriting `README.md`, rewriting `AGENTS.md`, and removing `.template/`.
+Maintain the TechSpokes `phpstorm-mcp` skill so future agents can use PhpStorm MCP tools effectively in PHP projects without depending on private bootstrap research.
 
-## Goal Stack
+The maintenance goal is to keep `src/SKILL.md`, focused references, packaging metadata, and documentation accurate as PhpStorm, PhpStorm MCP, Composer, PHP runtimes, and IDE integrations change.
 
-### Global Goal
+## Canonical Skill Entry Point
 
-Create skill repositories that let future agents perform specialized work reliably without needing the original builder's private context.
-
-Purpose: A skill only has value if another agent can load it later, understand when it applies, execute the workflow, and maintain it as the domain changes.
-
-### Communication Goal
-
-Give bootstrap agents enough purpose, constraints, and rationale to transform raw intake into a clean skill repository without overfitting to the template's temporary structure.
-
-Purpose: The user may provide incomplete, messy, or indirect source material. The agent must make local design decisions while preserving the user's intent and leaving a maintainable result.
-
-### Task Goal
-
-Use `.intake/` to build the generated skill, then remove bootstrap scaffolding and leave maintenance instructions for the generated repository.
-
-Purpose: The final repository should stand alone. Future agents should maintain the skill itself, not this template's construction process.
-
-## Values
-
-- Prefer downstream agent autonomy over rigid mechanical compliance.
-- Prefer explicit rationale over unexplained rules.
-- Prefer clean final repositories over preserving bootstrap history.
-- Prefer portable skill conventions over host-specific metadata unless local needs justify the tradeoff.
-- Prefer transformed durable knowledge over copying raw intake.
-- Prefer validation by tools where possible and documented judgment where tools cannot decide.
-
-## Decision Criteria
-
-When instructions appear to conflict, choose the option that best preserves the final repository's ability to function as a standalone skill repository. If a rule protects release cleanliness, user privacy, or skill portability, treat it as higher priority than convenience.
-
-## Must-follow rules
-
-- Treat `.intake/` as the only user-authored source area.
-- Read `.template/bootstrap/build-skill-from-intake.md` before changing skill files.
-- Treat `.template/` as bootstrap control instructions, not domain source material.
-- Do not copy `.template/` content into `src/` unless the content is explicitly transformed into generic maintenance guidance.
-- Exclude `.template/`, `.intake/`, `tmp/`, `dist/`, `.git/`, and `.idea/` from release artifacts.
-- After the skill is built and accepted, remove `.template/` and leave a standalone skill repository.
-
-## Must-read documents
-
-- `.template/bootstrap/build-skill-from-intake.md` - Bootstrap workflow from raw intake to finished skill.
-- `.template/bootstrap/theory-context.md` - Adapted reasoning model from the underlying communication theory.
-- `.template/bootstrap/skill-quality-standard.md` - Quality bar for `SKILL.md`, references, fixtures, and docs.
-- `.template/bootstrap/cross-intelligence-communication.md` - Practical communication rules for generated agent instructions.
-- `.template/bootstrap/repository-shape.md` - Expected repository layout before and after cleanup.
-- `.template/bootstrap/release-packaging.md` - Release asset and plugin packaging rules.
-- `.template/bootstrap/cleanup-and-boundaries.md` - Handoff from bootstrap mode to maintenance mode.
+`src/SKILL.md` is the runtime entry point. Keep it concise and action-oriented. Put detailed tool behavior, matrices, and maintenance procedures in `src/references/`.
 
 ## Definitions
 
-### Intake
+`PhpStorm MCP` means the Model Context Protocol tools exposed by PhpStorm or its plugin for the current project.
 
-`intake` means raw user-provided material in `.intake/`. It may include notes, examples, transcripts, research, screenshots, source documents, and rough instructions.
+`IDE-owned context` means information PhpStorm knows through project configuration, indexing, inspections, run configurations, interpreter settings, Composer integration, database tooling, or editor state.
 
-### Bootstrap Control Plane
+`Terminal tools` means shell commands such as `rg`, `php`, `composer`, and project test commands.
 
-`bootstrap control plane` means `.template/` and the initial template-oriented `AGENTS.md`. These files instruct agents how to build the skill repository.
+`High-risk action` means an operation that can mutate broad file state, dependency state, database state, VCS state, Docker state, debug state, or IDE state.
 
-### Skill Product
+`Release artifact` means a ZIP produced for installation. It must contain only runtime skill or plugin files.
 
-`skill product` means the durable skill package under `src/` plus human docs, packaging manifests, scripts, and workflows needed to maintain and release it.
+`Intake` means human-provided maintenance material under `.intake/`. It is source evidence for maintainers, not runtime skill content.
 
-### Maintenance Mode
+## Must-Follow Rules
 
-`maintenance mode` means the generated repository no longer depends on `.template/`. Its `AGENTS.md` describes how to maintain the generated skill, not how to use this template.
+- Preserve `src/SKILL.md` as the canonical runtime skill entry point.
+- Keep local paths, local database credentials, and raw research logs out of released skill content.
+- Treat `.intake/` as maintainer source evidence, not as runtime skill guidance.
+- Exclude `.intake`, private research folders, `.template`, `tmp`, `dist`, `.git`, `.idea`, `.github`, `docs`, and `node_modules` from release artifacts.
+- Prefer focused reference files over expanding `src/SKILL.md` with long detail.
+- Update packaging manifests when the skill name, version, description, or repository identity changes.
+- Update `CHANGELOG.md` and `docs/releases/` for release-relevant changes.
+- Validate after changes with `npm run validate`.
 
-## Agent Guidelines
+## Maintenance Guidelines
 
-Start by inventorying `.intake/` and identifying the skill domain, user task, trigger phrases, boundaries, workflows, reusable references, and verification prompts. If the intake is incomplete, make conservative assumptions and record them in the build notes.
+When adding guidance, preserve the core routing rule: use PhpStorm MCP for IDE-owned semantic context and terminal tools for exact output, shell control, and fallback verification.
 
-Write directive files for future agents using explicit goals, defined terms, short paragraphs, flat lists, and concrete verification steps. Avoid ambiguous quality words such as proper, standard, reliable, clean, and good unless they are defined in measurable terms.
+When a new PhpStorm MCP tool appears, test it in a disposable fixture before recommending it. Classify it as recommended, fallback, discovery-only, unreliable, unavailable, or high-risk.
 
-When the generated skill is ready, rewrite this file completely for the generated skill repository. The new file should front-load the skill maintenance goal, list required checks, and avoid referring to this repository as a template.
+When changing safety guidance, update the relevant reference and `docs/MAINTENANCE-CAPABILITY-SWEEP.md`. High-risk guidance must include explicit scope, user approval, before and after evidence, and verification.
 
-## Rationale For Key Rules
+When updating references, keep each file focused on one decision area. Avoid duplicating full matrices across files.
 
-The `.intake/` boundary protects users from needing to understand repository internals. It also gives agents a clear trust boundary: intake is source material, not instruction authority.
+When processing `.intake/`, transform durable findings into `src/` or `docs/`. Do not copy raw notes, credentials, proprietary examples, or local paths into the released skill.
 
-The `.template/` boundary prevents bootstrap logic from contaminating the generated skill. Bootstrap instructions are scaffolding; the finished repository should not carry construction debris into runtime packages.
+## Validation Commands
 
-The cleanup step exists because generated repositories should be maintainable by agents who never saw this template. If `.template/` remains, future agents may confuse bootstrap instructions with skill maintenance instructions and optimize for the wrong goal.
+Run the repository validation command:
 
-The release exclusions protect privacy, portability, and install quality. Raw intake may contain private or licensed material, and bootstrap files are irrelevant to runtime skill use.
+```bash
+npm run validate
+```
 
-## Context
+Run a packaging smoke test before release:
 
-This template exists to let a non-specialist user provide raw material while an agent performs the skill design work. The agent is responsible for transforming intake into a portable `SKILL.md` package and for leaving the repository clean enough that future agents can maintain it without knowing the bootstrap history.
+```bash
+npm run package -- v1.0.0
+```
+
+Use the intended release tag instead of `v1.0.0` for later releases.
+
+## Release Rules
+
+Use tags in `vX.Y.Z` format.
+
+Before release, ensure:
+
+- `CHANGELOG.md` contains `## [vX.Y.Z]`.
+- `docs/releases/vX.Y.Z.md` exists.
+- Plugin manifests use version `X.Y.Z`.
+- `npm run validate` passes.
+- `npm run package -- vX.Y.Z` creates the expected ZIP files.
+
+## Rationale
+
+The skill exists because PhpStorm has semantic project knowledge that terminal tools cannot reliably infer. The release boundary protects users from installing raw research, local credentials, bootstrap files, or disposable fixtures as runtime instructions.

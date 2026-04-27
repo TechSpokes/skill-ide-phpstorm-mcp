@@ -4,18 +4,18 @@ body:
   - type: markdown
     attributes:
       value: |
-        Start a general discussion about Skill Base Template.
+        Start a general discussion about the phpstorm-mcp skill.
   - type: dropdown
     id: topic-category
     attributes:
       label: Topic Category
       options:
-        - Template direction
-        - Agent skill repository patterns
-        - Bootstrap workflow
-        - Validation and release
+        - Skill behavior
+        - PhpStorm MCP capabilities
+        - Tool routing
+        - Safety boundaries
+        - Packaging and releases
         - Documentation
-        - Community adoption
         - Other
     validations:
       required: true
@@ -30,4 +30,4 @@ body:
     id: context
     attributes:
       label: Context
-      description: Add background that would help others understand the topic.
+      description: Add non-private background that would help others understand the topic.

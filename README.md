@@ -1,89 +1,95 @@
-# Skill Base Template
+# PhpStorm MCP Skill
 
-Skill Base Template is a public GitHub repository template by TechSpokes for creating structured, validated, releasable agent skill repositories from raw intake material.
+`phpstorm-mcp` is a TechSpokes agent skill for PHP developers who want coding agents to use the same PhpStorm project intelligence they rely on every day.
 
-Use this template when you want a repeatable path from a skill idea to a maintained repository with `SKILL.md`, references, validation scripts, release workflows, and plugin packaging. The template is designed for agent-assisted creation: the user places source material in `.intake/`, and an AI coding agent turns that material into a standalone skill repository.
+It gives agents a practical operating model for PhpStorm MCP: use the IDE for semantic PHP work, project configuration, inspections, quick fixes, refactors, and interpreter-aware execution; use terminal tools when exact shell behavior and raw output matter more.
 
-## Why It Exists
+## Why PHP Developers Want This
 
-Agent skills are becoming reusable operational units for AI coding environments. Teams need a consistent way to create them without hand-building repository structure, release assets, validation checks, and maintenance instructions each time.
+Modern PHP projects hide critical truth in the IDE.
 
-This template promotes a structured workflow for automated creation, validation, release, and maintenance of agent skills. It helps skill authors move faster while preserving the reasoning and boundaries future agents need to maintain the skill safely.
+PhpStorm knows the active PHP language level, configured interpreter, Xdebug state, formatter rules, inspections, run configurations, Composer integration, indexed symbols, database tools, and framework-aware project context. A terminal-only agent can miss that context, especially when `php`, Composer, Docker, WSL, SSH, or a remote interpreter disagree.
 
-## What It Provides
+This skill teaches the agent to ask PhpStorm first when the IDE has the project truth, then verify with terminal tools when deterministic output matters.
 
-- Intake-driven skill generation from `.intake/`.
-- Bootstrap instructions for AI coding agents.
-- A portable `src/SKILL.md` package layout.
-- Reference, asset, and fixture folders for progressive disclosure.
-- Validation for skill frontmatter, manifests, links, and release boundaries.
-- Template-safe CI plus generated skill release workflows installed during bootstrap cleanup.
-- A cleanup path that converts the generated repository into a standalone maintained skill repo.
+## What It Helps Agents Do
 
-## Intended Users
+- Refresh live PHP project configuration before runtime-sensitive decisions.
+- Detect PHP and Composer runtime mismatch.
+- Search with IDE project awareness and fall back to `rg` when indexing may lag.
+- Use PhpStorm inspections and quick fixes without broad cleanup surprises.
+- Rename PHP symbols semantically instead of using text replacement.
+- Run PHP scripts through the PhpStorm project interpreter.
+- Treat database writes, Composer updates, delete actions, and broad IDE actions as high-risk.
+- Validate edits with searches, inspections, tests, and `git status`.
 
-This template is for teams and maintainers who want to publish dedicated agent skills without requiring every contributor to understand the full skill packaging process.
+## What It Does Not Do
 
-It is also useful for organizations adopting structured agent workflows across multiple skill repositories.
+This skill does not tell agents to abandon the terminal. Shell commands are still better for exact stdout, stderr, arguments, environment variables, working directories, pipes, process control, and fast raw file scans.
 
-## Quick Start
+The skill also does not make broad IDE actions safe by default. It teaches agents to prefer direct MCP tools and scoped quick fixes, then require explicit approval for risky operations.
 
-1. Open this template repository on GitHub.
-2. Click `Use this template` above the file list.
-3. Select `Create a new repository`.
-4. Choose the owner account or organization for the new repository.
-5. Enter a repository name and optional description.
-6. Choose public or private visibility.
-7. Leave `Include all branches` unchecked unless you intentionally need every branch from the template.
-8. Click `Create repository from template`.
-9. Clone the new repository GitHub created, not the template repository.
-10. Add source material, examples, and rough notes to `.intake/`.
-11. Ask an AI coding agent to build the skill from intake.
-12. Review the generated skill, docs, packaging, and validation results.
-13. Publish release assets when the generated repository is ready.
+## How To Use It
 
-Detailed workflow: [docs/BOOTSTRAP-WORKFLOW.md](docs/BOOTSTRAP-WORKFLOW.md).
+Install the skill, then ask the agent to use PhpStorm MCP while working in a PHP project opened in PhpStorm.
 
-## Documentation
+Use prompts like these:
 
-- [docs/BOOTSTRAP-WORKFLOW.md](docs/BOOTSTRAP-WORKFLOW.md) - Full lifecycle from intake to standalone skill repository.
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) - Repository modes, authority model, and design intent.
-- [docs/QUICKSTART.md](docs/QUICKSTART.md) - Short usage path for creating a skill repository.
-- [docs/INSTALL.md](docs/INSTALL.md) - How generated skill packages are installed.
-- [docs/RELEASING.md](docs/RELEASING.md) - Release checklist and packaging workflow.
-- [docs/PROVENANCE.md](docs/PROVENANCE.md) - Attribution and distilled-source notes.
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines.
-- [SUPPORT.md](SUPPORT.md) - Support paths and contact options.
-- [SECURITY.md](SECURITY.md) - Security reporting and sensitive material guidance.
-
-## Template Status
-
-This repository starts in bootstrap mode. Generated repositories should eventually remove `.template/`, rewrite `README.md`, rewrite `AGENTS.md`, and become standalone skill repositories.
-
-## Validation
-
-Run:
-
-```bash
-npm run validate
+```text
+Use the PhpStorm MCP skill to inspect this PHP project, apply safe quick fixes, and run the tests through the project interpreter.
 ```
 
-## Packaging
-
-Run:
-
-```bash
-npm run package -- v0.1.0
+```text
+Use the PhpStorm MCP skill to rename this service method and verify every implementation and call site.
 ```
 
-Use the intended release tag. Packaging writes release assets to `dist/assets/`.
+```text
+Use the PhpStorm MCP skill to compare PhpStorm's PHP interpreter with Composer's runtime before running the test command.
+```
 
-## Author
+```text
+Use the PhpStorm MCP skill to decide whether this task should use PhpStorm inspections, a semantic refactor, or terminal commands.
+```
 
-Authored and maintained by TechSpokes.
+## What Changes In The Agent
 
-Several bootstrap and documentation files contain distilled versions of TechSpokes ideas on agent instructions, README structure, Markdown form engineering, and cross-intelligence communication. See [docs/PROVENANCE.md](docs/PROVENANCE.md).
+Without this skill, an agent may treat a PhpStorm project like plain files plus shell commands.
 
-## License
+With this skill, the agent knows to:
 
-This repository is licensed under the terms in [LICENSE](LICENSE).
+- Ask PhpStorm for the active PHP interpreter and language level.
+- Prefer semantic rename refactoring over text replacement.
+- Use inspections and quick fixes before broad cleanup.
+- Run simple PHP scripts through the project interpreter when that matters.
+- Check Composer runtime mismatch before trusting Composer scripts.
+- Fall back to terminal tools when exact shell behavior matters.
+- Treat database writes and destructive IDE actions as approval-gated work.
+
+## Install From A Release
+
+Use one release asset:
+
+- `phpstorm-mcp-vX.Y.Z.zip` for standalone skill installation.
+- `phpstorm-mcp-codex-plugin-vX.Y.Z.zip` for Codex plugin installation.
+- `phpstorm-mcp-claude-plugin-vX.Y.Z.zip` for Claude plugin installation.
+
+See [docs/INSTALL.md](docs/INSTALL.md) for package layouts and installation notes.
+
+## Runtime Skill Contents
+
+- `src/SKILL.md` is the canonical runtime skill entry point.
+- `src/references/` contains focused guidance loaded only when needed.
+
+The packaged standalone skill contains only `SKILL.md` and runtime references.
+
+## Best Fit
+
+Use this skill for Symfony, Laravel, WordPress, Magento, custom PHP apps, Composer libraries, CLI tools, and any PHP codebase where PhpStorm has meaningful project configuration.
+
+It is especially useful when the project has multiple PHP versions, Composer scripts, generated code, remote interpreters, Docker, WSL, SSH, Xdebug, database tooling, or framework-specific run configurations.
+
+## Author And Maintainer
+
+TechSpokes maintains this skill.
+
+Website: [www.techspokes.com](https://www.techspokes.com)

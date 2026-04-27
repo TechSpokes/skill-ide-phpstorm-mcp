@@ -1,32 +1,9 @@
 # Provenance
 
-Skill Base Template was created by TechSpokes: [www.techspokes.com](https://www.techspokes.com).
+The `phpstorm-mcp` skill was generated from private bootstrap research about PhpStorm MCP behavior in disposable PHP fixtures.
 
-## Distilled Materials
+The released skill transforms those findings into durable workflow guidance. Raw research files, local paths, local database credentials, and disposable fixtures are not release content.
 
-Several bootstrap files in this repository contain distilled, operational versions of TechSpokes internal research and specifications. They are adapted for public template use and are not full copies of the original source documents.
+Future maintainers should update the skill through evidence gathered in disposable fixtures or explicitly approved project scope.
 
-Distilled areas include:
-
-- Cross-intelligence communication theory.
-- AGENTS.md structure and instruction-file design.
-- README.md structure and public repository cover guidance.
-- Markdown form engineering and style rules.
-- Problem framing and task decomposition.
-- Agent skill repository packaging and maintenance workflow.
-
-## Why The Full Sources Are Not Bundled
-
-The original research files are broader, longer, and more exploratory than this template needs. Bundling them would increase context load and make bootstrap agents distinguish research notes from actionable instructions.
-
-This repository carries the operational guidance needed to build and maintain skill repositories. It preserves the relevant reasoning in compact form.
-
-## Ideas Behind The Template
-
-The template applies TechSpokes ideas about cross-intelligence communication, agent-readable repository structure, directive-file design, Markdown as transport engineering, and the transition from bootstrap instructions to maintainable agent skill repositories.
-
-The central idea is that agent instructions work better when they preserve purpose, reasoning, authority boundaries, and verification paths rather than only listing steps.
-
-## Discussion
-
-If these ideas are relevant to your work, reach out to Serge Liatko, CEO of TechSpokes, on LinkedIn: [linkedin.com/in/sergeliatko](https://www.linkedin.com/in/sergeliatko/).
+Human-provided maintenance material may be placed in `.intake/` for review. Maintainers must transform any durable findings into `src/` or `docs/` before release.

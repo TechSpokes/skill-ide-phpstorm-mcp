@@ -4,18 +4,18 @@ body:
   - type: markdown
     attributes:
       value: |
-        Ask questions about using Skill Base Template.
+        Ask questions about using or maintaining the phpstorm-mcp skill.
   - type: dropdown
     id: question-type
     attributes:
       label: Question Type
       options:
-        - Getting started
-        - GitHub template flow
-        - Intake preparation
-        - Agent bootstrap workflow
-        - Generated skill structure
-        - Validation or release
+        - Installing the skill
+        - Using PhpStorm MCP
+        - Tool selection
+        - Capability sweeps
+        - Safety boundaries
+        - Release packaging
         - Other
     validations:
       required: true
@@ -30,4 +30,4 @@ body:
     id: context
     attributes:
       label: Context
-      description: Share commands, repository state, or public examples. Do not include secrets or private intake.
+      description: Share versions, commands, or public examples. Do not include secrets or private project material.
