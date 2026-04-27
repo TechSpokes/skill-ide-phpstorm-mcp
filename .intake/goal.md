@@ -1,0 +1,7 @@
+I need a skill to boost AI agent efficiency while working with my IDE: PHPStorm. It has a native MCP server that is often more efficient than default agents tools available in terminal. Before building the skill (bootstrapping), I want you to test the MCP server's functionality and compare it with terminal tools to understand the potential efficiency gains and document everything as the input for the skill development.
+
+Could you install the MCP server from the .intake/.mcp.json file and then create a simple sample php app (inside .intake/app/ folder - choose the app purpose at your liking) for testing the MCP server's functionality and compare the agent experience and efficiency between using the MCP server and terminal tools you have?
+
+While working on the app document your experience in the .intake/experience/ folder, try to group themes of functionalities, efficiency, and any issues you encounter. Once you have the app working, create a report comparing the agent experience and efficiency between using the MCP server and terminal tools, and save it in the .intake/experience/ folder as well.
+
+If needed plan your work in the .intake/mcp-usage-testing.plan.yaml and .intake/php-app-development.plan.yaml files to outline your approach for both tasks.
