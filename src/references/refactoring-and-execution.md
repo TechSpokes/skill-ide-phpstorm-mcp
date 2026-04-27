@@ -1,10 +1,10 @@
 # Refactoring And Execution
 
-Use this reference for PHP symbol refactors and execution paths.
+Use this reference for symbol refactors and execution paths.
 
 ## Symbol Refactoring
 
-Use `rename_refactoring` for PHP code symbols.
+Use `rename_refactoring` for supported code symbols.
 
 Do not use raw text replacement for code symbols unless the user explicitly asks for non-semantic text changes.
 
@@ -19,11 +19,11 @@ After a rename, verify with:
 
 Call `get_run_configurations` when execution is part of the task.
 
-Saved configurations may contain project-specific interpreter, environment, framework, Docker, WSL, SSH, or test runner settings. Absence of saved configurations does not block simple PHP file execution.
+Saved configurations may contain project-specific runtime, environment, framework, Docker, WSL, SSH, or test runner settings. Absence of saved configurations does not block shell execution.
 
-## Simple PHP File Execution
+## Simple File Execution
 
-Use `execute_run_configuration(filePath, line)` for simple PHP scripts or tests when the PhpStorm project interpreter matters.
+Use `execute_run_configuration(filePath, line)` for simple scripts or tests when the PhpStorm project runtime matters and the active MCP schema supports that execution path.
 
 This path can work even when no saved run configuration or run point is discovered. If a fresh file cannot be accessed, force IDE awareness with search or `open_file_in_editor`, then retry.
 
@@ -38,8 +38,8 @@ Use `execute_terminal_command` or shell execution when the command needs:
 - Process composition.
 - Long-running process control.
 
-Dynamic launch overrides for arguments, working directory, and environment may be unsupported for ad hoc PHP script run configurations.
+Dynamic launch overrides for arguments, working directory, and environment may be unsupported for ad hoc run configurations.
 
 ## Output Interpretation
 
-Terminal PHP may use a different runtime than PhpStorm and may emit local warnings, such as Xdebug log messages. Treat that output as evidence about the shell path, not proof that the PhpStorm interpreter behaves the same way.
+Terminal runtime output may differ from PhpStorm runtime output. Treat shell output as evidence about the shell path, not proof that the IDE runtime behaves the same way.

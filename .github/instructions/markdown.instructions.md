@@ -19,9 +19,11 @@ Keep Markdown files readable by humans, AI agents, GitHub, IDEs, and simple tool
 - Use dashes for unordered lists.
 - Use numbered lists only when order matters.
 - Add language identifiers to fenced code blocks.
-- Use `bash` for portable shell commands.
-- Use `text` for command output.
-- Use `powershell` only when the command uses PowerShell-specific syntax.
+- Use `bash` for portable shell command fences.
+- Use `text` for command output fences.
+- Use `powershell` only when the command fence uses PowerShell-specific syntax.
+- Use inline code spans for commands, tool names, exact CLI snippets, and identifiers when useful.
+- Do not let inline code spans move to their own physical line.
 - Avoid horizontal rules.
 - Avoid em dash punctuation.
 - Use relative links for repository files.

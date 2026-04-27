@@ -4,7 +4,7 @@
 
 This repository packages one runtime skill: `phpstorm-mcp`.
 
-The skill teaches agents to route PHP project work between PhpStorm MCP and terminal tools. The architecture uses progressive disclosure so agents load only the guidance needed for the active task.
+The skill teaches agents to route PhpStorm project work between PhpStorm MCP and terminal tools. PHP-specific guidance applies only when the active project uses PHP or Composer. The architecture uses progressive disclosure so agents load only the guidance needed for the active task.
 
 ## Runtime Surface
 
@@ -16,10 +16,9 @@ The skill teaches agents to route PHP project work between PhpStorm MCP and term
 - `capability-matrix.md` for tested tool behavior and classifications.
 - `search-and-indexing.md` for search fallback and index freshness.
 - `inspection-and-quick-fixes.md` for diagnostics and cleanup.
-- `refactoring-and-execution.md` for symbol rename and PHP execution.
-- `composer-runtime.md` for Composer and PHP runtime mismatch.
-- `database-and-ide-actions.md` for database and action safety.
-Repository maintainers use `docs/MAINTENANCE-CAPABILITY-SWEEP.md` for future capability updates.
+- `refactoring-and-execution.md` for symbol rename and execution.
+- `composer-runtime.md` for Composer and PHP runtime mismatch when relevant.
+- `database-and-ide-actions.md` for database and action safety. Repository maintainers use `docs/MAINTENANCE-CAPABILITY-SWEEP.md` for future capability updates.
 
 ## Design Decision
 

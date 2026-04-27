@@ -6,9 +6,11 @@ Use this reference when deciding how much to trust a PhpStorm MCP tool.
 
 | Capability | Observed behavior | Guidance |
 | --- | --- | --- |
-| `get_php_project_config` | Reliable runtime and language-level snapshot. | Run early and before runtime-sensitive decisions. |
+| `get_php_project_config` | Reliable project runtime snapshot. | Run early and before runtime-sensitive decisions. |
 | `get_run_configurations` | Useful discovery even when no saved configurations exist. | Check first; absence does not block file execution. |
-| `execute_run_configuration` | Ran PHP files by `filePath` and `line` without saved configs. | Prefer for simple PHP execution through project interpreter. |
+| `get_project_dependencies` | Documented in the built-in PhpStorm MCP server. | Use to inventory libraries. |
+| `get_project_modules` | Documented in the built-in PhpStorm MCP server. | Use when available to understand IDE module boundaries. |
+| `execute_run_configuration` | Ran PHP files by `filePath` and `line` without saved configs in fixture testing. | Prefer for simple execution when the active schema and project runtime support it. |
 | `execute_terminal_command` | Captured IDE terminal output cleanly. | Use when IDE terminal environment matters. |
 | `search_file` | Reliable structured path search. | Prefer for compact file coordinates. |
 | `search_text` | Good compact coordinates after indexing was current. | Use when available; verify fresh-file misses. |
@@ -20,7 +22,7 @@ Use this reference when deciding how much to trust a PhpStorm MCP tool.
 | `get_inspections` | Includes quick-fix families and metadata. | Use before automated quick fixes. |
 | `apply_quick_fix` | Predictable scoped mutations in fixtures. | Apply one family at a time and re-inspect. |
 | `reformat_file` | Applies IDE formatter. | Use only on intended files. |
-| `rename_refactoring` | Updated declarations, implementations, and call sites. | Prefer for PHP symbols. |
+| `rename_refactoring` | Updated declarations, implementations, and call sites. | Prefer for supported code symbols. |
 | `open_file_in_editor` | Sets IDE context. | Use for user orientation or index awareness. |
 | `search_ide_actions` | Valuable capability catalog. | Use for discovery when direct tools are absent. |
 | `invoke_ide_action` | Often status-only and context-sensitive. | Avoid for deterministic automation. |

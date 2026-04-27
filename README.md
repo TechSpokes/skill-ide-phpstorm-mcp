@@ -1,69 +1,72 @@
 # PhpStorm MCP Skill
 
-`phpstorm-mcp` is a TechSpokes agent skill for PHP developers who want coding agents to use the same PhpStorm project intelligence they rely on every day.
+`phpstorm-mcp` helps coding agents use the same PhpStorm project context developers rely on.
 
-It gives agents a practical operating model for PhpStorm MCP: use the IDE for semantic PHP work, project configuration, inspections, quick fixes, refactors, and interpreter-aware execution; use terminal tools when exact shell behavior and raw output matter more.
+PhpStorm is often used for PHP projects, mixed repositories, frontend applications, documentation sites, and tooling projects. Those projects still depend on IDE-owned context: configured runtimes, framework indexing, inspections, formatter rules, run configurations, database connections, and symbol graphs. When an agent sees only files and a shell, it can pick the wrong runtime, miss framework conventions, rename code by text, or make broad edits without enough evidence.
 
-## Why PHP Developers Want This
+This skill gives the agent a practical rule: use PhpStorm MCP for IDE-owned semantic context, then use terminal tools for exact commands, raw output, fresh file scans, and process control.
 
-Modern PHP projects hide critical truth in the IDE.
+## Why This Exists
 
-PhpStorm knows the active PHP language level, configured interpreter, Xdebug state, formatter rules, inspections, run configurations, Composer integration, indexed symbols, database tools, and framework-aware project context. A terminal-only agent can miss that context, especially when `php`, Composer, Docker, WSL, SSH, or a remote interpreter disagree.
+Coding agents are useful in PhpStorm projects only when they work from the same project context as the developer.
 
-This skill teaches the agent to ask PhpStorm first when the IDE has the project truth, then verify with terminal tools when deterministic output matters.
+That context often lives in PhpStorm: custom frameworks, package constraints, Laravel or Symfony conventions, WordPress and Magento structure, JavaScript and frontend tooling, test runners, static analysis tools, remote interpreters, Docker, WSL, SSH, and local database tooling. Developers also need explicit control over changes that can affect dependencies, databases, cleanup, formatting, VCS state, or generated files.
 
-## What It Helps Agents Do
+PhpStorm already tracks much of that project knowledge. `phpstorm-mcp` tells agents when to ask the IDE, when to verify in the terminal, and when to stop for approval.
 
-- Refresh live PHP project configuration before runtime-sensitive decisions.
-- Detect PHP and Composer runtime mismatch.
-- Search with IDE project awareness and fall back to `rg` when indexing may lag.
-- Use PhpStorm inspections and quick fixes without broad cleanup surprises.
-- Rename PHP symbols semantically instead of using text replacement.
-- Run PHP scripts through the PhpStorm project interpreter.
-- Treat database writes, Composer updates, delete actions, and broad IDE actions as high-risk.
-- Validate edits with searches, inspections, tests, and `git status`.
+## What It Improves
 
-## What It Does Not Do
+- Agents start from active PhpStorm project context.
+- Runtime-sensitive work accounts for project runtimes, package managers, and interpreter differences.
+- Search combines IDE-aware context with terminal fallback.
+- Diagnostics start with PhpStorm inspections before tests or broad cleanup.
+- Code symbol renames use semantic refactoring instead of text replacement when supported.
+- Tests and scripts can follow the project runtime when the IDE defines one.
+- High-risk work stays approval-gated and scoped.
+- Validation uses more than one signal before reporting success.
 
-This skill does not tell agents to abandon the terminal. Shell commands are still better for exact stdout, stderr, arguments, environment variables, working directories, pipes, process control, and fast raw file scans.
+## Best Fit
 
-The skill also does not make broad IDE actions safe by default. It teaches agents to prefer direct MCP tools and scoped quick fixes, then require explicit approval for risky operations.
+Use this skill when a project is open in PhpStorm and the IDE knows things an external agent may not know.
 
-## How To Use It
+It is especially useful for:
 
-Install the skill, then ask the agent to use PhpStorm MCP while working in a PHP project opened in PhpStorm.
+- Laravel, Symfony, WordPress, Magento, Composer libraries, CLI tools, and custom apps.
+- JavaScript, TypeScript, frontend, documentation, and tooling projects opened in PhpStorm.
+- Mature or proprietary codebases with project-specific architecture.
+- Projects with remote interpreters, Docker, WSL, SSH, Xdebug, or generated code.
+- Teams that want IDE diagnostics before terminal verification.
 
-Use prompts like these:
+## Example Requests
 
 ```text
-Use the PhpStorm MCP skill to inspect this PHP project, apply safe quick fixes, and run the tests through the project interpreter.
+Use the PhpStorm MCP skill to inspect this project, fix only low-risk issues, and verify the result with IDE diagnostics before tests.
 ```
 
 ```text
-Use the PhpStorm MCP skill to rename this service method and verify every implementation and call site.
+Use the PhpStorm MCP skill to rename this service method semantically and check every implementation and call site.
 ```
 
 ```text
-Use the PhpStorm MCP skill to compare PhpStorm's PHP interpreter with Composer's runtime before running the test command.
+Use the PhpStorm MCP skill to compare the PhpStorm interpreter, Composer runtime, and test command before changing code.
 ```
 
 ```text
-Use the PhpStorm MCP skill to decide whether this task should use PhpStorm inspections, a semantic refactor, or terminal commands.
+Use the PhpStorm MCP skill in this TypeScript project to inspect warnings, use IDE search, and validate with the project test command.
 ```
 
-## What Changes In The Agent
+```text
+Use the PhpStorm MCP skill to decide whether this task needs IDE inspections, semantic refactoring, or terminal commands.
+```
 
-Without this skill, an agent may treat a PhpStorm project like plain files plus shell commands.
+## How It Works
 
-With this skill, the agent knows to:
+The installed skill contains one entry point and focused references.
 
-- Ask PhpStorm for the active PHP interpreter and language level.
-- Prefer semantic rename refactoring over text replacement.
-- Use inspections and quick fixes before broad cleanup.
-- Run simple PHP scripts through the project interpreter when that matters.
-- Check Composer runtime mismatch before trusting Composer scripts.
-- Fall back to terminal tools when exact shell behavior matters.
-- Treat database writes and destructive IDE actions as approval-gated work.
+- `src/SKILL.md` tells the agent when to use PhpStorm MCP and how to route work.
+- `src/references/` contains task-specific guidance for search, inspections, quick fixes, refactoring, execution, Composer when present, database safety, and IDE actions.
+
+The guidance is intentionally conservative. PhpStorm MCP capabilities can vary by IDE version, enabled plugins, client, and project type, so the agent refreshes live project state and validates mutations instead of assuming a fixed setup.
 
 ## Install From A Release
 
@@ -75,20 +78,13 @@ Use one release asset:
 
 See [docs/INSTALL.md](docs/INSTALL.md) for package layouts and installation notes.
 
-## Runtime Skill Contents
+## Package Boundary
 
-- `src/SKILL.md` is the canonical runtime skill entry point.
-- `src/references/` contains focused guidance loaded only when needed.
+Release packages contain only runtime skill files and plugin manifests.
 
-The packaged standalone skill contains only `SKILL.md` and runtime references.
+They exclude intake material, raw research, local paths, private credentials, disposable fixtures, repository documentation, workflows, temporary output, and distribution folders.
 
-## Best Fit
-
-Use this skill for Symfony, Laravel, WordPress, Magento, custom PHP apps, Composer libraries, CLI tools, and any PHP codebase where PhpStorm has meaningful project configuration.
-
-It is especially useful when the project has multiple PHP versions, Composer scripts, generated code, remote interpreters, Docker, WSL, SSH, Xdebug, database tooling, or framework-specific run configurations.
-
-## Author And Maintainer
+## Maintainer
 
 TechSpokes maintains this skill.
 

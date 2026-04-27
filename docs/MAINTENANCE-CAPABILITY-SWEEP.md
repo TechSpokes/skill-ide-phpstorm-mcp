@@ -17,7 +17,7 @@ Do not include disposable fixtures in release artifacts.
 ## Required Sweep
 
 1. Refresh `get_php_project_config`.
-2. Record PHP language level, interpreter, runtime, extensions, and Xdebug.
+2. Record interpreter, runtime, extensions, Xdebug, run configurations, and inspection profile assumptions.
 3. Record `get_run_configurations`.
 4. Compare Composer's PHP runtime with PhpStorm's interpreter.
 5. Test file discovery, text search, regex search, and terminal `rg`.

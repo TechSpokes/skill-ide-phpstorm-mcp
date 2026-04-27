@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository is maintained by TechSpokes for the `phpstorm-mcp` skill. Contributions should improve how agents use PhpStorm MCP safely and effectively in PHP projects.
+This repository is maintained by TechSpokes for the `phpstorm-mcp` skill. Contributions should improve how agents use PhpStorm MCP safely in PhpStorm projects, including PHP and non-PHP repositories.
 
 ## Good Contributions
 
@@ -17,7 +17,7 @@ This repository is maintained by TechSpokes for the `phpstorm-mcp` skill. Contri
 - Read `AGENTS.md`.
 - Read `src/SKILL.md`.
 - Run `npm run validate`.
-- Run `npm run package -- v0.1.0` when changing packaging or release behavior.
+- Run `npm run package -- vX.Y.Z` when changing packaging or release behavior.
 
 ## Evidence Standard
 

@@ -8,7 +8,11 @@ Use `get_file_problems` for a broad warning and error summary.
 
 Use `get_inspections` when quick-fix names, fix families, or richer inspection metadata matters.
 
-Refresh `get_php_project_config` before applying syntax-modernizing fixes. PHP language level can change during a session, and quick-fix suitability depends on the active project settings.
+Run IDE diagnostics before tests after most edits. They are usually cheaper and catch syntax, warning, suggestion, and formatting problems before slower behavioral checks.
+
+Do not treat every Markdown or documentation style warning as blocking. If the repository deliberately prefers a style that PhpStorm flags, report the warning and continue with the next relevant validation signal.
+
+Refresh project context before applying syntax-modernizing fixes. In PHP projects, use `get_php_project_config` when available. Quick-fix suitability depends on the active runtime, package constraints, inspection profile, and project settings.
 
 ## Quick-Fix Loop
 
@@ -21,7 +25,8 @@ Use this loop:
 3. Apply `apply_quick_fix` to the scoped target.
 4. Re-run `get_inspections`.
 5. Repeat only if the next fix is still valid after coordinates shift.
-6. Run tests or file-level diagnostics after mutation.
+6. Run file-level diagnostics after mutation.
+7. Run tests when behavior, contracts, or integration paths could be affected.
 
 ## Broad Cleanup Actions
 
@@ -37,4 +42,4 @@ Use `reformat_file` when the task explicitly allows formatting the target file.
 
 Do not reformat unrelated files to make a diff look uniform.
 
-Validate formatting edits with a diff, file problems, and tests when behavior could be affected.
+Validate formatting edits with a diff and file problems. Run tests when behavior could be affected.

@@ -9,7 +9,7 @@ The ZIP contains:
 ```text
 phpstorm-mcp/
 |-- SKILL.md
-`-- references/
++-- references/
 ```
 
 Place the extracted `phpstorm-mcp` folder in the host's skill directory.
@@ -23,9 +23,9 @@ The ZIP contains:
 ```text
 phpstorm-mcp-codex-plugin/
 |-- .codex-plugin/
-|   `-- plugin.json
-`-- skills/
-    `-- phpstorm-mcp/
+|   +-- plugin.json
++-- skills/
+    +-- phpstorm-mcp/
 ```
 
 ## Claude Plugin
@@ -37,9 +37,9 @@ The ZIP contains:
 ```text
 phpstorm-mcp-claude-plugin/
 |-- .claude-plugin/
-|   `-- plugin.json
-`-- skills/
-    `-- phpstorm-mcp/
+|   +-- plugin.json
++-- skills/
+    +-- phpstorm-mcp/
 ```
 
 ## Local Validation
@@ -53,5 +53,5 @@ npm run validate
 Package locally with:
 
 ```bash
-npm run package -- v1.0.0
+npm run package -- vX.Y.Z
 ```
