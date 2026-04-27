@@ -4,6 +4,12 @@
 
 No unreleased changes.
 
+## [v1.1.0]
+
+- Update CI and release workflows to use `actions/checkout@v6`.
+- Update CI and release workflows to use `actions/setup-node@v6`.
+- Prepare v1.1.0 release package metadata.
+
 ## [v1.0.2]
 
 - Update Codex and Claude plugin manifests to describe PhpStorm projects instead of PHP-only projects.
