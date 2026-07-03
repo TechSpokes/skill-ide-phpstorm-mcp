@@ -4,9 +4,19 @@
 
 No unreleased changes.
 
+## [v1.2.0]
+
+- Add required plugin manifest metadata and validation for license fields and Claude display name.
+- Skip placeholder files and prune empty directories during release packaging.
+- Update install documentation with current standalone skill locations.
+- Correct release workflow smoke-test tag guidance, changelog checks, and checkout version history.
+- Make `docs/RELEASING.md` the single source for repository change and release workflow guidance.
+- Add a local template-feedback convention for upstream template improvement notes.
+- Apply and document GitHub repository hardening settings, including squash-only merging and the `main protection` ruleset.
+
 ## [v1.1.0]
 
-- Update CI and release workflows to use `actions/checkout@v6`.
+- Update CI and release workflows to use `actions/checkout@v7`.
 - Update CI and release workflows to use `actions/setup-node@v6`.
 - Prepare v1.1.0 release package metadata.
 

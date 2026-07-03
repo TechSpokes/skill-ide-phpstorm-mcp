@@ -1,6 +1,6 @@
 {
   "name": "phpstorm-mcp",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Agent skill for using PhpStorm MCP tools in PhpStorm projects.",
   "author": {
     "name": "TechSpokes",
@@ -8,6 +8,7 @@
   },
   "homepage": "https://github.com/TechSpokes/skill-ide-phpstorm-mcp",
   "repository": "https://github.com/TechSpokes/skill-ide-phpstorm-mcp",
+  "license": "MIT",
   "keywords": [
     "agent-skill",
     "codex-plugin",

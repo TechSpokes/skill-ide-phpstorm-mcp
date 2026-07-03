@@ -12,12 +12,16 @@ This repository is maintained by TechSpokes for the `phpstorm-mcp` skill. Contri
 - Update references after a documented capability sweep.
 - Improve validation or release packaging without changing runtime behavior.
 
+## How Changes Land
+
+Changes should land through a pull request that passes the `Validate skill package` check. The full workflow is documented in `docs/RELEASING.md`.
+
 ## Before Opening A Pull Request
 
 - Read `AGENTS.md`.
 - Read `src/SKILL.md`.
 - Run `npm run validate`.
-- Run `npm run package -- vX.Y.Z` when changing packaging or release behavior.
+- Run `npm run package -- v0.0.0` when changing packaging or release behavior.
 
 ## Evidence Standard
 

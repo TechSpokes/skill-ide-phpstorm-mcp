@@ -47,6 +47,8 @@ When updating references, keep each file focused on one decision area. Avoid dup
 
 When processing `.intake/`, transform durable findings into `src/` or `docs/`. Do not copy raw notes, credentials, proprietary examples, or local paths into the released skill.
 
+When maintenance reveals a defect or missing safeguard in the base template, capture the local note under `.skill-template-feedback/`. Do not copy local feedback notes into release packages. Route durable fixes upstream to `TechSpokes/skill-base-template` when they should benefit future generated skill repositories.
+
 ## Validation Commands
 
 Run the repository validation command:
@@ -58,22 +60,16 @@ npm run validate
 Run a packaging smoke test before release:
 
 ```bash
-npm run package -- v1.0.0
+npm run package -- v0.0.0
 ```
 
-Use the intended release tag instead of `v1.0.0` for later releases.
+Use the intended release tag instead of `v0.0.0` when cutting a real release.
 
 ## Release Rules
 
-Use tags in `vX.Y.Z` format.
+Use `docs/RELEASING.md` as the single source for how changes land and how releases are cut.
 
-Before release, ensure:
-
-- `CHANGELOG.md` contains `## [vX.Y.Z]`.
-- `docs/releases/vX.Y.Z.md` exists.
-- Plugin manifests use version `X.Y.Z`.
-- `npm run validate` passes.
-- `npm run package -- vX.Y.Z` creates the expected ZIP files.
+The GitHub repository settings and `main protection` ruleset have already been applied. Verify live GitHub settings for drift before changing them, and do not create duplicate rulesets.
 
 ## Rationale
 
