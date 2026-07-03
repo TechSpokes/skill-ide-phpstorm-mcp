@@ -17,8 +17,11 @@ The skill teaches agents to route PhpStorm project work between PhpStorm MCP and
 - `search-and-indexing.md` for search fallback and index freshness.
 - `inspection-and-quick-fixes.md` for diagnostics and cleanup.
 - `refactoring-and-execution.md` for symbol rename and execution.
+- `http-client-request-files.md` for JetBrains HTTP Client request files, response capture, downloads, and request execution safety.
 - `composer-runtime.md` for Composer and PHP runtime mismatch when relevant.
-- `database-and-ide-actions.md` for database and action safety. Repository maintainers use `docs/MAINTENANCE-CAPABILITY-SWEEP.md` for future capability updates.
+- `database-and-ide-actions.md` for database and action safety.
+
+Repository maintainers use `docs/MAINTENANCE-CAPABILITY-SWEEP.md` for future capability updates.
 
 ## Design Decision
 
@@ -30,7 +33,7 @@ PhpStorm MCP schemas, interpreters, Composer paths, operating systems, run confi
 
 Direct MCP tools are preferred for semantic automation. IDE actions are treated as capability discovery unless current testing proves they are scoped, deterministic, and verifiable.
 
-High-risk operations require explicit user approval and disposable scope. This includes database writes, Composer updates, deletion, broad cleanup, VCS removal, Docker prune, and debug-state changes.
+High-risk operations require explicit user approval and disposable scope. This includes database writes, Composer updates, deletion, broad cleanup, VCS removal, Docker prune, debug-state changes, and HTTP Client requests that can affect remote systems, credentials, downloads, uploads, response files, or TLS behavior.
 
 ## Maintenance Model
 

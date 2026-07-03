@@ -38,6 +38,7 @@ PhpStorm already tracks much of that project knowledge. `phpstorm-mcp` tells age
 - Diagnostics start with PhpStorm inspections before tests or broad cleanup.
 - Code symbol renames use semantic refactoring instead of text replacement when supported.
 - Tests and scripts can follow the project runtime when the IDE defines one.
+- JetBrains HTTP Client `.http` and `.rest` request files get request run-point discovery, response capture, download, environment selection, and safety guidance.
 - High-risk work stays approval-gated and scoped.
 - Validation uses more than one signal before reporting success.
 
@@ -80,7 +81,7 @@ Use the PhpStorm MCP skill to decide whether this task needs IDE inspections, se
 The installed skill contains one entry point and focused references.
 
 - `src/SKILL.md` tells the agent when to use PhpStorm MCP and how to route work.
-- `src/references/` contains task-specific guidance for search, inspections, quick fixes, refactoring, execution, Composer when present, database safety, and IDE actions.
+- `src/references/` contains task-specific guidance for search, inspections, quick fixes, refactoring, execution, HTTP Client request files, Composer when present, database safety, and IDE actions.
 
 The guidance is intentionally conservative. PhpStorm MCP capabilities can vary by IDE version, enabled plugins, client, and project type, so the agent refreshes live project state and validates mutations instead of assuming a fixed setup.
 

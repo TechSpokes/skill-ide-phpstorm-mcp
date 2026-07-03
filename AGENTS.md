@@ -26,6 +26,7 @@ The maintenance goal is to keep `src/SKILL.md`, focused references, packaging me
 
 ## Must-Follow Rules
 
+- Never create branches or worktrees unless the user explicitly asks for them. Work on `main` for this single-maintainer repository unless instructed otherwise by the user and the user has explicitly approved a branch or worktree.
 - Preserve `src/SKILL.md` as the canonical runtime skill entry point.
 - Keep local paths, local database credentials, and raw research logs out of released skill content.
 - Treat `.intake/` as maintainer source evidence, not as runtime skill guidance.
