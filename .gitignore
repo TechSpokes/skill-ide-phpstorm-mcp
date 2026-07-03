@@ -1,6 +1,7 @@
 node_modules/
 dist/
 tmp/
+.scratches/
 .template/state/
 .idea/
 *.log

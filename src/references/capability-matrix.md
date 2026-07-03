@@ -8,11 +8,14 @@ Use this reference when deciding how much to trust a PhpStorm MCP tool.
 | --- | --- | --- |
 | `get_php_project_config` | Reliable project runtime snapshot. | Run early and before runtime-sensitive decisions. |
 | `get_run_configurations` | Useful discovery even when no saved configurations exist. | Check first; absence does not block file execution. |
+| `get_run_configurations(filePath)` for HTTP files | Returned `Run/Debug HTTP Request` run points for an IDE-visible `.http` file in a disposable probe. | Recommended for line discovery before running HTTP Client request files. |
 | `get_project_dependencies` | Documented in the built-in PhpStorm MCP server. | Use to inventory libraries. |
 | `get_project_modules` | Documented in the built-in PhpStorm MCP server. | Use when available to understand IDE module boundaries. |
 | `execute_run_configuration` | Ran PHP files by `filePath` and `line` without saved configs in fixture testing. | Prefer for simple execution when the active schema and project runtime support it. |
+| `execute_run_configuration(filePath,line)` for HTTP files | Executed a disposable `.http` run point and returned exit code `0` with empty output. | Treat execution as callable but verify response files, request history, or handler tests before claiming success. |
 | `execute_terminal_command` | Captured IDE terminal output cleanly. | Use when IDE terminal environment matters. |
 | `search_file` | Reliable structured path search. | Prefer for compact file coordinates. |
+| `search_file` with `includeExcluded` | Found ignored `.http` scratch files, while a fresh ignored HTTP probe needed `open_file_in_editor` before it appeared in IDE-backed discovery. | Use for local probe files that may be ignored, then open fresh ignored files in the editor when discovery misses them. |
 | `search_text` | Good compact coordinates after indexing was current. | Use when available; verify fresh-file misses. |
 | `find_files_by_glob` | Can miss very fresh files until indexing catches up. | Use after indexing stabilizes or with fallback. |
 | `find_files_by_name_keyword` | Returns broad filename and directory matches. | Treat as broad discovery. |
@@ -25,6 +28,7 @@ Use this reference when deciding how much to trust a PhpStorm MCP tool.
 | `rename_refactoring` | Updated declarations, implementations, and call sites. | Prefer for supported code symbols. |
 | `open_file_in_editor` | Sets IDE context. | Use for user orientation or index awareness. |
 | `search_ide_actions` | Valuable capability catalog. | Use for discovery when direct tools are absent. |
+| HTTP Client IDE actions | `search_ide_actions` exposed HTTP Client creation, conversion, collection, environment, and history actions in live discovery. | Treat as discovery-only unless a direct MCP tool or saved run configuration cannot cover the task. |
 | `invoke_ide_action` | Often status-only and context-sensitive. | Avoid for deterministic automation. |
 | `run_inspection_kts` | Failed without a known-good inspection template. | Treat as advanced and unreliable. |
 

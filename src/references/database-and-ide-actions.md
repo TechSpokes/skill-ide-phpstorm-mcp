@@ -38,6 +38,21 @@ Before any database write, require:
 
 Never run drop, truncate, import, export, schema compare apply, or migration-like actions against non-disposable data without explicit scope and approval.
 
+## HTTP Request Side Effects
+
+Classify remote, credentialed, mutating, upload, download, response-writing, TLS-verification-disabled, WebSocket, GraphQL mutation, and debug HTTP Client requests as high-risk.
+
+Before running a high-risk HTTP Client request, require:
+
+- Explicit user approval for the exact target.
+- The selected HTTP Client environment.
+- The HTTP method and request file or run configuration.
+- The output path for any saved response or download.
+- A rollback or cleanup plan when the remote action can mutate state.
+- A verification plan that does not expose private response bodies.
+
+Prefer local disposable hosts for capability probes. Do not use production or customer endpoints to test the skill itself.
+
 ## IDE Action Discovery
 
 Use `search_ide_actions` to discover capabilities such as usages, hierarchy, refactor actions, cleanup, Composer, database, debug, diagrams, coverage, Qodana, PHPDoc, constructors, and optimize imports.
@@ -67,6 +82,7 @@ Keep these high-risk by default:
 - Composer install or update actions
 - Database drop, truncate, import, export, and schema alteration
 - Docker delete and prune actions
+- HTTP Client non-local, production, customer, credentialed, cookie-dependent, mutating, upload, download, response-writing, private-environment, WebSocket, GraphQL mutation, TLS-verification-disabled, and debug actions
 - VCS remove, shelve, branch delete, and worktree delete
 - Debugger breakpoint removal and debug-state toggles
 

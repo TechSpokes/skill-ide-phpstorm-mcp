@@ -32,6 +32,8 @@ Use `reformat_file` to format one intended file. Fall back to the project format
 
 Use `execute_run_configuration(filePath, line)` for simple file execution when the active MCP schema supports it. Fall back to IDE terminal or shell.
 
+Use PhpStorm MCP for JetBrains HTTP Client `.http` and `.rest` request files when the request should be a reusable IDE artifact, needs HTTP Client environments, uses response handlers, runs sequential request workflows, or saves response bodies. Fall back to terminal tools such as `curl` when exact stdout, portable CI execution, custom shell flags, or process control matters more.
+
 Use `execute_terminal_command` or shell execution when arguments or environment matter. Fall back to saved run configurations when supported.
 
 Use `search_ide_actions` to discover IDE capabilities. Fall back to the IDE UI or official docs.
@@ -48,6 +50,9 @@ Ask these questions before choosing a tool:
 - Does the task need exact shell behavior or machine-readable stdout?
 - Were files created recently enough that IDE indexing may lag?
 - Is the operation semantic, such as a code symbol rename?
+- Is an HTTP request file safer and more reusable than a one-off shell command?
+- Is the request remote, credentialed, mutating, downloading, uploading, writing output, or using a private environment file?
+- Has the user selected and confirmed the intended HTTP Client environment in PhpStorm?
 - Can the action mutate files, dependencies, database state, or IDE state?
 - Is there a deterministic validation path after the action?
 

@@ -27,6 +27,18 @@ Use `execute_run_configuration(filePath, line)` for simple scripts or tests when
 
 This path can work even when no saved run configuration or run point is discovered. If a fresh file cannot be accessed, force IDE awareness with search or `open_file_in_editor`, then retry.
 
+## HTTP Client Request Execution
+
+Load `http-client-request-files.md` before creating, editing, or running JetBrains HTTP Client `.http` or `.rest` files.
+
+Use `get_run_configurations(filePath)` to discover request run points before executing by line.
+
+Use `execute_run_configuration(filePath,line)` for one approved request run point.
+
+Use a saved HTTP Request run configuration for whole-file workflows when one is listed by `get_run_configurations`.
+
+Treat empty MCP output as inconclusive for HTTP requests. Verify saved response files, custom output paths, request history, or response handler test results before reporting success.
+
 ## Arguments And Environment
 
 Use `execute_terminal_command` or shell execution when the command needs:

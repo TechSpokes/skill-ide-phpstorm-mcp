@@ -4,6 +4,13 @@
 
 No unreleased changes.
 
+## [v1.4.0]
+
+- Add runtime guidance for JetBrains HTTP Client `.http` and `.rest` request files.
+- Cover request run-point discovery, saved HTTP Request configurations, response captures, downloads, environment confirmation, and empty-output verification.
+- Classify high-risk HTTP Client requests, including remote, credentialed, mutating, upload, download, response-writing, TLS-verification-disabled, cookie, WebSocket, GraphQL mutation, and debug workflows.
+- Add a repeatable disposable HTTP Client capability sweep and prepare v1.4.0 release package metadata.
+
 ## [v1.3.0]
 
 - Add a README quick install path that points users to the latest GitHub release and explains which ZIP asset to choose.
@@ -14,7 +21,7 @@ No unreleased changes.
 ## [v1.2.0]
 
 - Add required plugin manifest metadata and validation for license fields and Claude display name.
-- Skip placeholder files and prune empty directories during release packaging.
+- Skip stub files and prune empty directories during release packaging.
 - Update install documentation with current standalone skill locations.
 - Correct release workflow smoke-test tag guidance, changelog checks, and checkout version history.
 - Make `docs/RELEASING.md` the single source for repository change and release workflow guidance.
