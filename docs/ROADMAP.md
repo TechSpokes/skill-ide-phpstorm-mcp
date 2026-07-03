@@ -86,6 +86,6 @@ Before cutting a real release, run `npm run package -- vX.Y.Z` with the intended
 
 ## Implementation Status
 
-All six phases have been implemented in the working tree. The GitHub repository settings described in `docs/RELEASING.md` were applied on 2026-07-03, including squash-only merging, disabled Projects and Wiki, enabled security checks, and the active `main protection` ruleset.
+All six phases have been implemented in the working tree. The GitHub repository settings described in `docs/RELEASING.md` were applied on 2026-07-03, including squash-only merging, disabled Projects and Wiki, enabled security checks, repository admin bypass, and the active `main protection` ruleset.
 
 Keep the phase plans as maintenance records for future review, and use `CHANGELOG.md` for unreleased implementation notes until the next release version is chosen.

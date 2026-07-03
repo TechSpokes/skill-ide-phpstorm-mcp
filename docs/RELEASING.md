@@ -50,6 +50,7 @@ The expected repository state is:
 - Secret scanning push protection enabled.
 - Dependabot security updates enabled.
 - One active ruleset named `main protection` targeting the default branch.
+- Repository admin bypass enabled for the `main protection` ruleset.
 
 Use the following commands only to repair drift or rebuild settings on a replacement repository.
 
@@ -87,7 +88,13 @@ Create the default-branch ruleset with `gh api repos/TechSpokes/skill-ide-phpsto
       "exclude": []
     }
   },
-  "bypass_actors": [],
+  "bypass_actors": [
+    {
+      "actor_id": 5,
+      "actor_type": "RepositoryRole",
+      "bypass_mode": "always"
+    }
+  ],
   "rules": [
     {
       "type": "pull_request",

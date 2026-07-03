@@ -69,7 +69,7 @@ Use the intended release tag instead of `v0.0.0` when cutting a real release.
 
 Use `docs/RELEASING.md` as the single source for how changes land and how releases are cut.
 
-The GitHub repository settings and `main protection` ruleset have already been applied. Verify live GitHub settings for drift before changing them, and do not create duplicate rulesets.
+The GitHub repository settings and `main protection` ruleset have already been applied. Repository admins intentionally bypass the ruleset so maintainers can push from local IDEs when needed. Verify live GitHub settings for drift before changing them, and do not create duplicate rulesets.
 
 ## Rationale
 
