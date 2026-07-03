@@ -4,6 +4,13 @@
 
 No unreleased changes.
 
+## [v1.3.0]
+
+- Add a README quick install path that points users to the latest GitHub release and explains which ZIP asset to choose.
+- Expand install documentation with direct latest-release guidance, exact standalone extraction targets, plugin package notes, and an after-install example request.
+- Align the package release script with the repository's Node global inspection directive pattern.
+- Prepare v1.3.0 release package metadata.
+
 ## [v1.2.0]
 
 - Add required plugin manifest metadata and validation for license fields and Claude display name.

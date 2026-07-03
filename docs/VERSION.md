@@ -2,7 +2,7 @@
 
 The `phpstorm-mcp` skill starts public release at version `1.0.0`.
 
-The current prepared release version is `1.2.0`.
+The current prepared release version is `1.3.0`.
 
 ## Tag Format
 

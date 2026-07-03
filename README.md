@@ -6,6 +6,22 @@ PhpStorm is often used for PHP projects, mixed repositories, frontend applicatio
 
 This skill gives the agent a practical rule: use PhpStorm MCP for IDE-owned semantic context, then use terminal tools for exact commands, raw output, fresh file scans, and process control.
 
+## Quick Install
+
+Download the current package from the [latest GitHub release](https://github.com/TechSpokes/skill-ide-phpstorm-mcp/releases/latest).
+
+Choose one release asset:
+
+- Use `phpstorm-mcp-vX.Y.Z.zip` when you want to install the skill folder directly into a project or personal skill directory.
+- Use `phpstorm-mcp-codex-plugin-vX.Y.Z.zip` when your Codex host supports plugin ZIP installation.
+- Use `phpstorm-mcp-claude-plugin-vX.Y.Z.zip` when your Claude host supports plugin ZIP installation.
+
+For most repository installs, extract the standalone ZIP so the project contains `.agents/skills/phpstorm-mcp/SKILL.md`.
+
+After installation, ask your coding agent to use `phpstorm-mcp` in a project that is open in PhpStorm and connected to PhpStorm MCP.
+
+Detailed installation notes: [docs/INSTALL.md](docs/INSTALL.md).
+
 ## Why This Exists
 
 Coding agents are useful in PhpStorm projects only when they work from the same project context as the developer.
@@ -67,16 +83,6 @@ The installed skill contains one entry point and focused references.
 - `src/references/` contains task-specific guidance for search, inspections, quick fixes, refactoring, execution, Composer when present, database safety, and IDE actions.
 
 The guidance is intentionally conservative. PhpStorm MCP capabilities can vary by IDE version, enabled plugins, client, and project type, so the agent refreshes live project state and validates mutations instead of assuming a fixed setup.
-
-## Install From A Release
-
-Use one release asset:
-
-- `phpstorm-mcp-vX.Y.Z.zip` for standalone skill installation.
-- `phpstorm-mcp-codex-plugin-vX.Y.Z.zip` for Codex plugin installation.
-- `phpstorm-mcp-claude-plugin-vX.Y.Z.zip` for Claude plugin installation.
-
-See [docs/INSTALL.md](docs/INSTALL.md) for package layouts and installation notes.
 
 ## Package Boundary
 
