@@ -139,6 +139,12 @@ gh api repos/TechSpokes/skill-ide-phpstorm-mcp/rulesets
 
 Use `v0.0.0` as the CI smoke-test tag. It is a placeholder and not a release version.
 
+## Known IDE Inspection
+
+PhpStorm may report `node-version` as an undefined parameter for `actions/setup-node@v6` while its bundled GitHub Actions metadata catches up. The official `actions/setup-node@v6` action metadata defines the `node-version` input, so keep the workflow pin unless live GitHub Actions execution fails or Dependabot opens a supported update.
+
+The workflow suppresses the local schema warning next to the `node-version` input. Do not downgrade action majors only to satisfy the IDE inspection.
+
 ## Release Source
 
 Use Git tags in `vX.Y.Z` format as the release source of truth.

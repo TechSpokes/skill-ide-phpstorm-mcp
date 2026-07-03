@@ -19,6 +19,8 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
+          # noinspection YAMLSchemaValidation
+          # PhpStorm may lag action metadata for setup-node@v6. The action defines this input.
           node-version: "22"
 
       - name: Validate skill

@@ -13,6 +13,7 @@ No unreleased changes.
 - Make `docs/RELEASING.md` the single source for repository change and release workflow guidance.
 - Add a local template-feedback convention for upstream template improvement notes.
 - Apply and document GitHub repository hardening settings, including squash-only merging and the `main protection` ruleset.
+- Document and suppress a known PhpStorm inspection false positive for `actions/setup-node@v6`.
 
 ## [v1.1.0]
 
