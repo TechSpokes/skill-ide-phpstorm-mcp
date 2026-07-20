@@ -63,7 +63,7 @@ jobs:
           } >> "${GITHUB_OUTPUT}"
 
       - name: Set up Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           # noinspection YAMLSchemaValidation
           # PhpStorm may lag action metadata for setup-node@v6. The action defines this input.
